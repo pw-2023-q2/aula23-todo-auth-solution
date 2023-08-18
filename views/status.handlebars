@@ -1,0 +1,28 @@
+<p><a href="/">Home</a></p>
+
+<p>
+{{#if (equals code 'item_add_success') }}
+    Item added successfully.
+{{/if}}
+{{#if (equals code 'item_update_success') }}
+    Item updated successfully.
+{{/if}}
+{{#if (equals code 'item_remove_success') }}
+    Item removed successfully.
+{{/if}}
+{{#if (equals code 'password_error')}}
+    Password confirmation does not match. Please retry.
+{{/if}}
+{{#if (equals code 'signup_success')}}
+    User created successfully
+{{/if}}
+{{#if (equals code 'signin_failed')}}
+    Sigin failed. Please try again.
+{{/if}}
+{{#if (equals code 'passwords_dont_match')}}
+    Password do not match. Please try again.
+{{/if}}
+{{#if (equals code 'exception') }}
+    An internal failure occurred. Please contact the developers.
+{{/if}}
+</p>
