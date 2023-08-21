@@ -61,7 +61,9 @@ export class UserController {
     signoff: RequestHandler = (req, res, next) => {
         req.session.authenticated = false
         req.session.email = ''
-        res.redirect('/')
+        req.session.destroy(() => {
+            res.redirect('/')
+        })
     }
 }
 
@@ -83,7 +85,6 @@ class UserMapper {
     }
 
     static matchPassword(json: any): boolean {
-        console.log(json)
         if ('password' in json && 'password-confirm' in json) {
             return json.password == json['password-confirm']
         }

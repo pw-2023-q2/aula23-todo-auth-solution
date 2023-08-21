@@ -91,7 +91,6 @@ export class UserDAO {
 
     async findByEmail(email: string): Promise<User> {
         try {
-            console.log(email)
             const item = await this.getItemCollection().findOne({email: email})
 
             if (item) {

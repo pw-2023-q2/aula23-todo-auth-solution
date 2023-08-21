@@ -5,7 +5,8 @@ import { Database, sessionStore } from "./models/database";
 import { ItemController } from "./controllers/item-controller";
 import { UserController } from "./controllers/user-controller";
 import session from "express-session";
-import { config } from "../conf/config";
+import { randomBytes } from "crypto";
+import {config} from "../conf/config"
 
 /**
  * main route
@@ -49,7 +50,9 @@ app.use(session({
     secret: config.sessionSecret,
     resave: false,
     saveUninitialized: true,
-    cookie: {secure: 'auto'},
+    cookie: {
+        secure: 'auto'
+    },
     store: sessionStore
 }))
 

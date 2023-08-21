@@ -14,7 +14,7 @@ export const config = {
         sequences: {
             toDoItemId: 'todo-item-id',
             userId: 'user-id'
-        }
-    },
-    sessionSecret: secrets.sessionSecret
+        },
+    }, 
+    sessionSecret: secrets.session
 }
